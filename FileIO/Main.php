@@ -1,4 +1,17 @@
 <?php
+//write file
+$filename = "data";
+$file = fopen($filename, 'a');
+
+if(!$file) {
+    echo "Something went wrong!";
+    exit();
+}
+
+fwrite($file, "\nThis is new line at the end of existed file.");
+fclose($file);
+
+//read file
 $filename = "data";
 $file = fopen($filename, 'r');
 
